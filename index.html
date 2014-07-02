@@ -4,21 +4,147 @@
 	<meta name="viewport" content="width=device-width">
 	<meta charset="UTF-8">
 	<title>Flag Script</title>
+
+	<style>
+		.cor{
+			width: 130px;
+			height: 130px;
+			display: block;
+			background-color: red;
+			position: absolute;
+			animation: cor linear 0.5s;
+			animation-iteration-count: infinite;
+			transform-origin: ;
+			-webkit-animation: cor linear 0.5s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-transform-origin: ;
+			-moz-animation: cor linear 0.5s;
+			-moz-animation-iteration-count: infinite;
+			-moz-transform-origin: ;
+			-o-animation: cor linear 0.5s;
+			-o-animation-iteration-count: infinite;
+			-o-transform-origin: ;
+			-ms-animation: cor linear 0.5s;
+			-ms-animation-iteration-count: infinite;
+			-ms-transform-origin: ;
+		}
+
+		@keyframes cor{
+		  0% {
+		    transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+		  }
+		  100% {
+		    transform:  rotate(360deg) scaleX(1) scaleY(1) ;
+		  }
+		}
+
+		@-moz-keyframes cor{
+		  0% {
+		    -moz-transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+		  }
+		  100% {
+		    -moz-transform:  rotate(360deg) scaleX(1) scaleY(1) ;
+		  }
+		}
+
+		@-webkit-keyframes cor {
+		  0% {
+		    -webkit-transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+		  }
+		  100% {
+		    -webkit-transform:  rotate(360deg) scaleX(1) scaleY(1) ;
+		  }
+		}
+
+		@-o-keyframes cor {
+		  0% {
+		    -o-transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+		  }
+		  100% {
+		    -o-transform:  rotate(360deg) scaleX(1) scaleY(1) ;
+		  }
+		}
+
+		@-ms-keyframes cor {
+		  0% {
+		    -ms-transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+		  }
+		  100% {
+		    -ms-transform:  rotate(360deg) scaleX(1) scaleY(1) ;
+		  }
+		}
+
+		.um{
+			left: 20%;
+			top: 10%;
+		}
+
+		.dois{
+			right: 20%;
+			top: 10%;
+		}
+
+		.tres{
+			left: 20%;
+			top: 60%;
+		}
+
+		.quatro{
+			right: 20%;
+			top: 60%;
+		}
+
+		.cinco{
+			left: 45%;
+			top: 40%;
+		}
+
+		.seis{
+			left: 5%;
+			top: 35%;
+		}
+
+		.sete{
+			right: 5%;
+			top: 35%;
+		}
+
+		.oito{
+			right: 48%;
+			top: 5%;
+		}
+
+		.nove{
+			right: 48%;
+			bottom: 5%;
+		}
+	</style>
 </head>
 <body>
+
+	<div class="cor um"></div>
+	<div class="cor dois"></div>
+	<div class="cor tres"></div>
+	<div class="cor quatro"></div>
+	<div class="cor cinco"></div>
+	<div class="cor seis"></div>
+	<div class="cor sete"></div>
+	<div class="cor oito"></div>
+	<div class="cor nove"></div>
+
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-
 	<script>
+		var color = ["red", "green", "blue", "yellow", "#00ffd0", "#ff1cef"];
 
-	var color = ["red", "green", "blue", "yellow", "#00ffd0", "#ff1cef"];
+		function change(){
+			$(".cor").each(function(){
+				var index = Math.floor(Math.random()*color.length);
+				$(this).css("background", color[index]);
+			});
 
-	function change(){
-		var index = Math.floor(Math.random()*color.length);
-		$("body").css("background", color[index]);
-	}
-
-	setInterval(change, 10);
-
+			$("body").css("background", color[Math.floor(Math.random()*color.length)]);
+		}
+		setInterval(change, 10);
 	</script>
 </body>
 </html>
